@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import { logger, loggerError, loggerInfo, loggerSuccess, loggerWarning } from './utils/logger';
 
 const app = express();
 const PORT = 8000;
@@ -8,5 +9,5 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+    loggerInfo(`⚡️[server]: Server is running at http://localhost:${PORT}`);
 });
