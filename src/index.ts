@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { logger, loggerError, loggerInfo, loggerSuccess, loggerWarning } from './utils/logger';
+import { loggerInfo } from './utils/logger';
 
 const app = express();
 const PORT = 8000;
