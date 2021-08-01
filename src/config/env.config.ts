@@ -13,5 +13,8 @@ switch (process.env.NODE_ENV || 'development') {
         })
         break
     default:
-        throw new Error(`'NODE_ENV' ${process.env.NODE_ENV} is not handled!`)
+        configDotenv({
+            path: resolve(__dirname, '../../.env')
+        })
+        break
 }

@@ -3,19 +3,19 @@ import chalk from 'chalk';
 // tslint:disable-next-line: no-console
 const log = console.log
 
-export const logger = (key: string, value?: number | string) => {
+export const logger = (key: string, value?: any) => {
     return log(key, value || '');
 }
-export const loggerSuccess = (key: string, value?: number | string) => {
+export const logSuccess = (key: string, value?: any) => {
     return log(chalk.green(key), value || '');
 }
-export const loggerWarning = (key: string, value?: number | string) => {
+export const logWarning = (key: string, value?: any) => {
     const warning = chalk.hex('#FFA500'); // Orange color
     return log(warning(key), value || '');
 }
-export const loggerError = (key: string, value?: number | string) => {
+export const logError = (key: string, value?: any) => {
     return log(chalk.red(key), value || '');
 }
-export const loggerInfo = (key: string, value?: number | string) => {
+export const logInfo = (key: string, value?: any) => {
     return log(chalk.blue(key), value || '');
 }
