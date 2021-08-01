@@ -11,7 +11,10 @@
     "lint": "tslint --project tsconfig.json",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
-    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\""
+    "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
+    "migration:generate": "npm run typeorm -- migration:generate --config src/config/orm.config.ts --connection  --name ",
+    "migration:run": "npm run typeorm -- migration:run"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +32,9 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.36"
   }
 }
