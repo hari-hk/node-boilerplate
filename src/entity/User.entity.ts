@@ -41,7 +41,20 @@ export class User {
         await userRepo.save(user)
         return user
     }
+    public static async deleteUser(id: string) {
+        const userRepo = getRepository(User)
+        const user = await userRepo.findOne(id)
+        if (user) {
+            await userRepo.delete(user.id)
+            return user
+        } else {
+            throw new Error('User not found')
+        }
+    }
     public static async getAllusers() {
         return getRepository(User).find()
+    }
+    public static async getUser(id: string): Promise<User | undefined> {
+        return getRepository(User).findOne(id)
     }
 }

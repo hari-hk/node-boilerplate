@@ -12,7 +12,7 @@
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
+    "typeorm": "ts-node --transpile-only  ./node_modules/.bin/typeorm",
     "migration:generate": "npm run typeorm -- migration:generate --config src/config/orm.config.ts --connection  --name ",
     "migration:run": "npm run typeorm -- migration:run"
   },

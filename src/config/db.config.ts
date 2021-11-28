@@ -24,12 +24,9 @@ export const DBConnect = async () => {
     }
 };
 
-export const TryDBConnect = async (onError: Function, next?: Function) => {
+export const TryDBConnect = async (onError: Function) => {
     try {
-        await DBConnect();
-        if (next) {
-            next();
-        }
+        await DBConnect()
     } catch (e) {
         onError();
     }
