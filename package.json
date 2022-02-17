@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rimraf build/* -Recurse -Force",
     "build": "npm run clean && tsc",
-    "start": "ts-node-dev --respawn --transpile-only ./src/index.ts",
-    "start:prod": "NODE_ENV=production node ./build/index.js",
+    "serve": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "serve:prod": "NODE_ENV=production node ./build/index.js",
     "lint": "tslint --project tsconfig.json",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",
