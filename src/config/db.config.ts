@@ -24,14 +24,10 @@ export const DBConnect = async () => {
   }
 };
 
-type fn = (...args: any[]) => void;
-
-export const TryDBConnect = async (onError: fn, next?: fn) => {
+type fn = () => void;
+export const TryDBConnect = async (onError: fn) => {
   try {
     await DBConnect();
-    if (next) {
-      next();
-    }
   } catch (e) {
     onError();
   }

@@ -15,32 +15,13 @@ export default {
   reconnectTries: 3,
   reconnectInterval: 2000,
   entities: [
-    `src/entity/**/*.${isProd ? 'js' : 'ts'}`
+    `src/entity/**/*.entity.${isProd ? 'js' : 'ts'}`
   ],
   migrations: [
-    `src/migration/**/*.${isProd ? 'js' : 'ts'}`
+    `src/migration/**/*.migration.${isProd ? 'js' : 'ts'}`
   ],
   cli: {
     'entitiesDir': 'src/entity',
     'migrationsDir': 'src/migration',
   },
 } as ConnectionOptions;
-
-// export default {
-//   type: 'postgres',
-//   host: process.env.DB_HOST,
-//   port: 5432,
-//   username: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   database: process.env.DB_NAME,
-//   synchronize: true,
-//   logging: false,
-//   entities: [`src/entity/**/*.${isProd ? 'js' : 'ts'}`],
-//   migrations: [`src/migration/**/*.${isProd ? 'js' : 'ts'}`],
-//   subscribers: [`src/subscriber/**/*.${isProd ? 'js' : 'ts'}`],
-//   cli: {
-//     entitiesDir: 'src/entity',
-//     migrationsDir: 'src/migration',
-//     subscribersDir: 'src/subscriber'
-//   }
-// } as ConnectionOptions;
